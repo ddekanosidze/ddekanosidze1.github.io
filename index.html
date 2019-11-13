@@ -29,16 +29,16 @@
 
     </header>
 
-    <div class="empty-space" >
-        <div class="green-space" ></div>
+    <div class="loader-space" >
+        <div class="loader" ></div>
     </div>
 
     <main class="main">
         <div class="table" >
             <div class="table-left-side" >
                 <div class="grid-container-left-side" >
-                    <div>  <span class="other-bets line-height-two-row" >1<span class="row" >st</span>12</span></div>
-                    <div class="item2"> <span class="other-bets line-height-two-row" >2<span class="row">nd</span>12</span></div>
+                    <div class="first-block">  <span class="other-bets line-height-two-row  " >1<span class="row" >st</span>12</span></div>
+                    <div class="item2 second-block"> <span class="other-bets line-height-two-row " >2<span class="row">nd</span>12</span></div>
                     <div ><span class="other-bets line-height-one-row" >1-18</span></div>
                     <div ><span class="other-bets line-height-one-row" >EVEN</span></div>
                     <div><span class="other-bets line-height-one-row bet-numbers red" ></span></div>
@@ -46,10 +46,9 @@
                     <div><span class="other-bets line-height-one-row" >ODD</span></div>
                     <div ><span class="other-bets line-height-one-row" >19-36</span></div>
 
-                    <div> <span class="other-bets line-height-two-row" >1<span class="row">st</span>12</span></div>
+                    <div class="third-block"> <span class="other-bets line-height-two-row" >1<span class="row ">st</span>12</span></div>
                 </div>
             </div>
-
             <div class="table-center" >
                 <div class="grid-container-numbers" >
                     <div class="green">0</div>
@@ -103,7 +102,7 @@
                     <li class="border"><img src="Content/Images/complete.png" alt=""><p>COMPLETE</p></li>
                     <li class="border"><img src="Content/Images/clear.png" alt=""><p>CLEAR</p></li>
                     <li class="border"><img src="Content/Images/undo.png" alt=""><p>UNDO</p></li>
-                    <li><img src="/Content/Images/Chip.png" alt=""></li>
+                    <li class="button-chip"> <span>0.1</span> </li>
                     <li class="border"><img src="Content/Images/r-track.png" alt=""><p>R_TRACK</p></li>
                     <li class="border"><img src="Content/Images/stats.png" alt=""><p>STATS</p></li>
                 </ul>
@@ -135,6 +134,16 @@
     </main>
 
 </div>
+<aside class="more-chips none">
+        <div class="show-other-chips" >
+            <li style="background-image: url(./Content/Images/0.1GEL.png);" class="chip ten-cent"  ><span>0.1</span></li>
+            <li style="background-image: url(./Content/Images/0.5GEL.png);"class="chip half-gel"  ><span>0.5</span></li>
+            <li style="background-image: url(./Content/Images/1GEL.png);" class="chip one-gel"><span>1</span></li>
+            <li style="background-image: url(./Content/Images/10GEL.png);"class="chip ten-gel " ><span>10</span></li>
+            <li style="background-image: url(./Content/Images/50GEL.png);"class="chip fifty-gel " ><span>50</span></li>
+            <li style="background-image: url(./Content/Images/100GEL.png);"class="chip houndreed-gel " ><span>100</span></li>
+        </div>
+    </aside>
 <div class="open-menu none" >
         <div class="menu-left-side" ></div>
         <div class="menu-right-side" >
@@ -161,6 +170,7 @@
                 <img src="./Content/Images/logout.png" alt=""><span>გასვლა</span>
             </div>
         </div>
+     
         <div class="history none">
             <div class="menu-history-header" >
                 <span class="last-houndreed-button" style="position: absolute;left:33px;top:27px;" >
@@ -173,6 +183,7 @@
                 </span>
                 <img src="./Content/Images/close.png" alt="" class="close-history" style="position: absolute;right: 34px;top: 42px;">
             </div>
+         
             <div class="menu-history-center  " >
                 <div class="last-houndreed-numbers-container none " >
                     <li class="red" >1</li>
@@ -396,7 +407,7 @@
                 </div>
             </div>
         </div>
-</div>  
+    </div>  
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="./Content/Scripts/script.js"></script>
 </body>

@@ -45,4 +45,9 @@ function menuFunction(){
             });
         
     });
+    
+    $(".button-chip").click(function(){
+        $(".more-chips").toggle("none");
+    })    
+
 }

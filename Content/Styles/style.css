@@ -84,6 +84,7 @@
     left: 0;
     right: 0;
     margin: 0 auto;
+    z-index: 2;
 }
 .menu-left-side{
     width: 224px;
@@ -312,14 +313,14 @@
     right: 112px;
     top: 42px;
 }
-.empty-space{
+.loader-space{
     width: 100%;
     height: 10px;
     display: flex;
     background-color:#010a17;
     justify-content: center;
 }
-.green-space{  
+.loader{  
     background-color: #37ba50;
     width: 368px;
     height: 100%;
@@ -458,6 +459,86 @@
     font-family: "CrystalBetUniBold";
     font-size: 17.6px;
     color: #4a6590;
+} 
+.button-chip{
+    background-image: url(/Content/Images/0.1GEL.png);
+    width: 96px;
+    height: 74px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    text-align: center;
+    line-height: 74px;
+    list-style: none;
+    margin-left: 20px;
+    z-index: 1;
+}
+.button-chip>span{
+    font-family: "CrystalBetUniBold";
+    text-align: center;
+    margin-left: -23%;
+    font-size: 20.78px;
+    color: #0675d0;  
+}
+.chip{
+    width: 93px;
+    height: 84px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    text-align: center;
+    line-height: 74px;
+    list-style: none;
+    margin-left: 45px;
+    margin-top: 15px;
+    line-height: 84px;
+}
+.chip>span{
+    font-family: "CrystalBetUniBold";
+    text-align: center;
+    margin-left: -13%;
+    font-size: 20.78px;
+   
+}
+.show-other-chips{
+    width: 175px;
+    height: 675px;
+    padding-top: 23px;
+    border-radius: 6px;
+    background-image: -moz-linear-gradient( 120deg, rgb(5,25,53) 0%, rgb(14,45,91) 100%);
+    background-image: -webkit-linear-gradient( 120deg, rgb(5,25,53) 0%, rgb(14,45,91) 100%);
+    background-image: -ms-linear-gradient( 120deg, rgb(5,25,53) 0%, rgb(14,45,91) 100%);
+    box-shadow: 0px 2px 29px 0px rgba(0, 0, 0, 0.4);
+    position: absolute;
+    left: 250px;
+    top: 200px;
+      
+}
+.more-chips{
+    margin: 0 auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6);
+    width: 576px;
+    height: 1024px;
+}
+.ten-cent{
+    color: #0675d0;  
+}
+.half-gel{
+    color: #68a400;
+}
+.one-gel{
+    color: #c51816;
+}
+.ten-gel{
+    color: #a17f19;
+}
+.fifty-gel{
+    color: #7469ca;
+}
+.houndreed-gel{
+    color: #704a9b;
 }
 .footer{
     position: absolute;
