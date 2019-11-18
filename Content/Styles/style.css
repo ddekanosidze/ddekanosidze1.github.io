@@ -355,7 +355,7 @@ body{
 }
 .grid-container-left-side{
     display: grid;
-    grid-template-columns: 67px 67px;
+    grid-template-columns: 70px 70px;
     grid-template-rows: 112.3px 112.3px 112.3px 112.3px 112.3px 112.3px ;
     background-color: #1f4b86; 
 }
