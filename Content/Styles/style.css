@@ -13,6 +13,9 @@
     src: url(../Fonts/crystaluni-medium-webfont.woff2);
 
 } 
+body{
+    
+}
 .main-div{
     height: 1024px;
     width: 576px;
@@ -182,6 +185,7 @@
 .menu-history-header>span.active{
     color: #bfae4b;
     border-bottom: 10px solid #bfae4b ;
+    
 }
 .menu-history-center{
     width: 576px;
@@ -275,18 +279,21 @@
 }
   
 .last-houndreed-numbers-container::-webkit-scrollbar,
-.user-game-history::-webkit-scrollbar {
+.user-game-history::-webkit-scrollbar,
+.favorites-content::-webkit-scrollbar{
     width: 20px;
 }
 .last-houndreed-numbers-container::-webkit-scrollbar-track,
-.user-game-history::-webkit-scrollbar-track {
+.user-game-history::-webkit-scrollbar-track,
+.favorites-content::-webkit-scrollbar-track {
     border-radius: 3px;
     height: 10px;
     
     background-color: #051429;
   }
   .last-houndreed-numbers-container::-webkit-scrollbar-thumb,
-  .user-game-history::-webkit-scrollbar-thumb {
+  .user-game-history::-webkit-scrollbar-thumb,
+  .favorites-content::-webkit-scrollbar-thumb {
     border-radius: 3px;
     background-color: #21477c;
     height: 10px;
@@ -350,7 +357,7 @@
     display: grid;
     grid-template-columns: 67px 67px;
     grid-template-rows: 112.3px 112.3px 112.3px 112.3px 112.3px 112.3px ;
-    background-color: #1f4b86; ;
+    background-color: #1f4b86; 
 }
 .grid-container-left-side div{
    border: 1px solid #b0c0d5;
@@ -417,8 +424,14 @@
     text-align: center;
     color: white;
 }
+.relative{
+    position: relative;
+}
 .black{
     background-color: #1a1a1a;
+}
+.bg-black{
+    background-color: black;
 }
 .green{
     background-color: #21ba3e;
@@ -454,7 +467,7 @@
     text-align: center;
     line-height: 54px;
 }
-.special-buttons  li.border > p{
+.special-buttons  li.border > .special-button{
     line-height:10px;
     font-family: "CrystalBetUniBold";
     font-size: 17.6px;
@@ -481,7 +494,7 @@
 }
 .chip{
     width: 93px;
-    height: 84px;
+    height: 93px;
     background-size: contain;
     background-repeat: no-repeat;
     text-align: center;
@@ -489,12 +502,12 @@
     list-style: none;
     margin-left: 45px;
     margin-top: 15px;
-    line-height: 84px;
+    line-height: 93px;
 }
 .chip>span{
     font-family: "CrystalBetUniBold";
     text-align: center;
-    margin-left: -13%;
+    margin-left: -6%;
     font-size: 20.78px;
    
 }
@@ -539,6 +552,63 @@
 }
 .houndreed-gel{
     color: #704a9b;
+}
+.background-racetrack{
+    background-image: -moz-linear-gradient( 120deg, rgb(5,25,53) 0%, rgb(14,45,91) 100%);
+    background-image: -webkit-linear-gradient( 120deg, rgb(5,25,53) 0%, rgb(14,45,91) 100%);
+    background-image: -ms-linear-gradient( 120deg, rgb(5,25,53) 0%, rgb(14,45,91) 100%);
+}
+
+.close-button{
+    background: url(/Content/Images/closesmall.png)no-repeat ;
+    background-position:left 50% top 15px;
+    background-color: rgb(253, 224, 83);
+    border-radius: 3px;
+
+}
+.close-text{
+    margin-top: 26px;
+    color: #372e04;
+    font-size: 17.6px;
+    font-family:"CrystalBetUniMedium";
+}
+
+  
+.racetrack{
+    position: absolute;
+    margin: 0 auto;
+    top: 138px;
+    left: 88px;
+}
+.neigbhours{
+    display: flex;
+    width: 378px;
+    height: 85px;
+    margin-left: -54px;
+    margin-top: 25px;
+    justify-content: space-between;
+    text-align: center;
+    /* line-height: 85px; */
+    font-family: "CrystalBetUniBold";
+}
+.neigbhours>aside{
+    border: 2px solid white;
+    border-radius: 3px;
+    color: white;
+    width: 100px;
+    height: 84px;
+    font-size: 54px;
+    line-height: 84px;
+}
+.neigbhours>div{
+    width: 178px;
+    height: 84px;
+    color: white;
+    font-size: 60px;
+    
+}
+.neigbhours>div>p{
+    font-size: 23px;
 }
 .footer{
     position: absolute;
@@ -624,4 +694,389 @@
 }
 .none{
     display: none;
+}
+.div-for-favorites,
+.div-for-racetrack,
+.div-for-stats{
+    width: 576px;
+    height: 1024px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0 auto;
+    right: 0;
+}
+.description-favorites{
+    display: flex;
+    width: 348px;
+    justify-content: space-between;
+    position: absolute;
+    left: 25px;
+    top: 15px;
+    font-size: 19.14px;
+}
+.delete-edit-logos{
+    line-height: 49px;
+}
+.description-favorites-tier{
+    border-radius: 3px;
+    /* background-color: rgb(0, 0, 0); */
+    color: #fde053;
+    line-height: 49px;
+    font-family: "CrystalBetUniMedium";
+    width: 176px;
+    height: 35px;
+    line-height: 35px;
+    margin-top: 8px;  
+}
+
+.description-favorites-bet{
+    color: white;
+    line-height: 49px;
+    font-family: "CrystalBetUniMedium";
+}
+
+.favorites-grid-container{
+    display: grid;
+    grid-template-columns: 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px ;
+    grid-template-rows: 35px 35px 35px;    
+    position: relative;
+    left: 21px;
+    top: 78px;
+}
+.favorites-other-bets{
+    display: grid;
+    grid-template-columns: 50px 50px 50px 50px 50px 50px;
+    grid-template-rows: 25px 25px;
+    position: relative;
+    left: 46px;
+    top: 78px;
+}
+.edit-logo{
+   margin-right: 25px;
+}
+.favorites-other-bets :first-child{
+    grid-column: 1/ span 2;
+}
+.item-2{
+    grid-column: 3/ span 2;
+    grid-row: 1/ span 1;
+}
+.favorites-other-bets :last-child{
+    grid-column: 5/ span 2;
+    grid-row: 1/ span 1;
+
+}
+.favorites-grid-container :first-child{
+    grid-row: 1/ span 3;
+
+}
+.favorites-grid-container > li,
+.favorites-other-bets > li {
+    border: 1px solid white;
+    list-style: none
+}
+
+.stats-content{
+    width: 400px;
+    height: 798px;
+    position: absolute;
+    left: 0;
+    top: 122px;
+}
+.stats-circle{
+    position: absolute;
+    width: 258px;
+    height: 258px;
+    border-radius: 50%;
+    background-color: red;
+    top: 48px;
+    left:90px;
+}
+.stats-numbers{
+    position: absolute;
+    width: 304px;
+    height: 100px;
+    background-color: blueviolet;
+    left: 69px;
+    
+}
+.history-board{
+    width: 576px;
+    height: 1024px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+
+    
+}
+.table-right-side-board{
+    position: absolute;
+    height: 783px;
+    width: 21.7%;
+    right: 15px;
+    border-radius: 5px;
+
+}
+.table-right-side-board-header{
+    height: 623px;
+    width: 100%;
+    background: #051428;
+    border-radius: 5px;
+    
+}
+.table-right-side-board-header > li:first-child{
+   width: 100%;
+   height: 150px;
+   font-size: 23px;
+   background-color: black;
+   color: white;
+   font-family: "CrystalBetUniMedium";
+   text-align: center;
+   position: absolute;
+   top: 20px;
+}
+.table-right-side-board-header>li>aside{
+    width: 45px;
+    height: 52px;
+    background-color: red;
+    text-align: center;
+    line-height: 52px;
+    border-radius: 3px;
+    margin-left: 37px;
+    margin-top: 18px;
+}
+.table-right-side-board-header>li{
+    list-style: none;   
+    display: block;
+}
+.table-right-side-board-header>li>p{
+    color:#fde053;
+    margin-top: 10px;
+}
+.table-right-side-board-header>li.last-history-description{
+    position: absolute;
+    color: white;
+    font-size: 21px;
+    font-family: "CrystalBetUniMedium";
+    text-align: center;
+    width: 100%;
+}
+.game-id-history{
+    top: 185px;
+;
+}
+.game-balance-history{
+    top: 305px;
+}
+.game-bet-history{
+    top: 419px;
+}
+.game-win-history{
+    top: 539px;
+}
+.history-on-board{
+    position: absolute;
+    top: 122px;
+    width: 576px;
+    height: 912px;
+    background-color: #0b274f;
+    background-image: -moz-linear-gradient( 120deg, rgb(5,25,53) 0%, rgb(14,45,91) 100%);
+    background-image: -webkit-linear-gradient( 120deg, rgb(5,25,53) 0%, rgb(14,45,91) 100%);
+    background-image: -ms-linear-gradient( 120deg, rgb(5,25,53) 0%, rgb(14,45,91) 100%);
+    z-index: 3;
+}
+.history-on-board-header{
+    position: absolute;
+    width: 100%;
+    height: 112px;
+    top: 0;
+    background-color: #071831;
+    text-align: center;
+    z-index: 3;
+   
+    
+}
+.board-history-button{
+ position: absolute;
+ bottom: 14px;
+ left: 398px;
+}
+.close-board-history{
+    background: url(/Content/Images/close.png)no-repeat;
+    width: 34px;
+    height: 34px;
+    position: absolute;
+    right: 34px;
+    top: 42px;
+}
+.rebet-board{
+    background-color: #24aa00;
+    border-radius: 5px; 
+    width: 100%;
+    margin-top: 18px;
+    height: 144px;
+    text-align: center;
+    position: relative;
+}
+.rebet-board > img{
+    position: absolute;
+    left: 44px;
+    top: 40px;
+}
+.rebet-board > p {
+    position: absolute;
+    font-size: 23px;
+    color: white;
+    font-family: "CrystalBetUniMedium";
+    top: 86px;
+    left: 26px;
+   
+}
+.history-board-description{
+    position: absolute;
+    left:33px;
+    top:27px;
+    color:#fde053;
+    font-size: 25.6px;
+    font-family: "CrystalBetUniBold";
+    width: 145px; 
+    border-bottom: 10px solid #bfae4b ;
+    height: 74px;
+    line-height: 50px;
+
+}
+.hot{
+    top: 325px;
+}
+.cold{
+    top: 452px;
+}
+.stats-other{
+    position: absolute;
+    width: 304px;
+    height: 184px;
+    background-color: brown;
+    top: 583px; 
+    left: 69px;
+}
+.favorites-content{
+    width: 438px;
+    height: 781px;
+    overflow-y: scroll;
+    position: relative;
+    left: 0;
+    top: 138px;
+    overflow-x: hidden;
+}
+
+.favorites-content>div{
+    width: 382px;
+    height: 239px;
+    margin-left: 17px;
+    margin-top: 18px;
+    border-radius: 3px;
+    background-color: #051224;
+}
+.favorites-content>div:first-child{
+    margin-top: 0;
+}
+.stats{
+    background-image: url(../Images/stats.png); 
+    background-repeat: no-repeat;
+    background-position: center 12px; 
+    height: 74px;
+    width: 96px;
+    border: 2px solid rgb(77, 105, 148);
+    border-radius: 3px;
+    text-align: center;
+    line-height: 54px;
+    z-index: 1;
+}
+
+.more-chips :after{
+    right: -22px;
+    content: '';
+    position: absolute;
+    transform: rotate(-90deg);
+    top: 500px;
+    border-left: 14px solid transparent;
+    border-right: 14px solid transparent;
+    border-top: 14px solid #082752;
+ }
+.stats:after{
+    content: 'stats';
+    text-transform: uppercase;
+    position: relative;  
+    top: 33px;
+    font-family: "CrystalBetUniBold";
+    font-size: 17.6px;
+    color: #4a6590;
+}
+.favorites{
+    background-image: url(../Images/favorites.png); 
+    background-repeat: no-repeat;
+    background-position: center 12px; 
+    height: 74px;
+    width: 96px;
+    border: 2px solid rgb(77, 105, 148);
+    border-radius: 3px;
+    text-align: center;
+    line-height: 54px;
+    z-index: 1;
+}
+.favorites:after {
+    content: 'favorites';
+    text-transform: uppercase;
+    position: relative;  
+    top: 33px;
+    font-family: "CrystalBetUniBold";
+    font-size: 17.6px;
+    color: #4a6590;
+}
+.r-track {
+    background-image: url(../Images/r-track.png); 
+    background-repeat: no-repeat;
+    background-position: center 12px; 
+    height: 74px;
+    width: 96px;
+    border: 2px solid rgb(77, 105, 148);
+    border-radius: 3px;
+    text-align: center;
+    line-height: 54px;
+    z-index: 1;
+}
+
+.r-track:after {
+    content: 'r_track';
+    text-transform: uppercase;
+    position: relative;  
+    top: 33px;
+    font-family: "CrystalBetUniBold";
+    font-size: 17.6px;
+    color: #4a6590;
+}
+.r-track.active,
+.favorites.active,
+.stats.active{
+    background-color: #fde053;
+    border: none;
+    position: relative;
+    background-image: url(../Images/closesmall.png);
+    background-repeat: no-repeat;
+    background-position: center 14px;
+    
+}
+.r-track.active:after,
+.favorites.active:after,
+.stats.active:after{
+    content: 'close';
+    position: absolute;
+    bottom: 12px;
+    left: 20px;   
+    font-size: 17.6px; 
+    color: #372e04;
+    font-family: "CrystalBetUniMedium";
 }
