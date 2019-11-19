@@ -50,14 +50,16 @@ $(document).ready(function () {
     });  
 
     $(document).on("click",".r-track",function() {
+        closeTab('.r-track');
         $(".racetrack").show();
         $(this).addClass('active');
-        $(".left-center").hide();
+        $(".left-center, .favorites-content, .div-for-stats").hide();
         $(".main").addClass("background-racetrack");
         $(".background-black").css("background","black");
-        $(".div-for-racetrack").show()
+        $(".div-for-racetrack").show();
     });
     $(document).on("click",".r-track.active",function() {
+        closeTab('.r-track.active');
         $(this).removeClass('active');
         $(".racetrack").hide();
         $(".left-center").show();
@@ -67,14 +69,16 @@ $(document).ready(function () {
 
     });
     $(document).on("click",".favorites",function() {
+        closeTab('.favorites');
         $(this).addClass('active');
         $(".favorites-content").show();
-        $(".left-center").hide();
+        $(".left-center, .racetrack, .div-for-stats").hide();
         $(".main").addClass("background-racetrack");
         $(".background-black").css("background","black")
         $(".div-for-favorites").show()
     });
     $(document).on("click",".favorites.active",function() {
+        closeTab('.favorites.active');
         $(this).removeClass('active');
         $(".favorites-content").hide()
         $(".left-center").show();
@@ -84,14 +88,16 @@ $(document).ready(function () {
 
     });
     $(document).on("click",".stats",function() {
+        closeTab('.stats');
         $(this).addClass('active');
-        $(".left-center").hide();
+        $(".left-center, .racetrack, .favorites-content").hide();
         $(".main").addClass("background-racetrack");
         $(".background-black").css("background","black")
         $(".div-for-stats").show()
 
     });
     $(document).on("click",".stats.active",function() {
+        closeTab('.stats.active');
         $(this).removeClass('active');
         $(".left-center").show();
         $(".main").removeClass("background-racetrack");
@@ -138,6 +144,34 @@ $(document).ready(function () {
     })
     $(".limits-button").on("click",function(){
         $(".div-for-rules").show();
+        $(".game-limit-description").show();
+        $(".game-rules-description").hide();
+        $(".game-jackpot-description").hide();
+        $(".game-limit").css({"border-bottom":"10px solid #bfae4b","color":"#bfae4b" });
+        $(".jackpot-rule").css({"color":"white","border":"transparent" })
+        $(".game-rules").css({"color":"white","border":"transparent" })
+
+    });
+    $(".jackpot-rules-button").on("click",function(){
+        $(".div-for-rules").show();
+        $(".game-jackpot-description").show();
+        $(".game-limit-description").hide();
+        $(".game-rules-description").hide();
+        $(".jackpot-rule").css({"border-bottom":"10px solid #bfae4b","color":"#bfae4b" });
+        $(".game-limit").css({"color":"white","border":"transparent" })
+        $(".game-rules").css({"color":"white","border":"transparent" })
+        
+    });
+    $(".game-rules-button").on("click",function(){
+        $(".div-for-rules").show();
+        $(".game-rules-description").show();
+        $(".game-limit-description").hide();
+        $(".game-jackpot-description").hide();
+        $(".game-rules").css({"border-bottom":"10px solid #bfae4b","color":"#bfae4b" });
+        $(".game-limit").css({"color":"white","border":"transparent" })
+        $(".jackpot-rule").css({"color":"white","border":"transparent" })
+
+        
     });
     $(document).on("click",".close-rules",function() {
         $(".div-for-rules").hide();
@@ -161,6 +195,12 @@ $(document).ready(function () {
       table.addEventListener("click", printMousePos);
 });
 
-// console.log
-// (    "clientX: " + event.clientX +
-// " - clientY: " + event.clientY)
+
+
+function closeTab(current) {
+    $(".closeTab").each(function(){
+        $(this).removeClass('active');
+    });
+    $(current).addClass('active');
+}
+
