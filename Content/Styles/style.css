@@ -19,10 +19,15 @@
     -webkit-user-select: none;
     -ms-user-select: none;
 }
+body{
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
 .main-div{
     height: 1024px;
     width: 576px;
     margin: 0 auto;
+    overflow-y: hidden;
 }
 .header{
     display: flex;
