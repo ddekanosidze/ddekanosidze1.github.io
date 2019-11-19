@@ -27,7 +27,7 @@ body{
     height: 1024px;
     width: 576px;
     margin: 0 auto;
-    overflow-y: hidden;
+
 }
 .header{
     display: flex;
