@@ -105,7 +105,62 @@ $(document).ready(function () {
     })
     $(".board-history-button").on("click",function(){
         $(".history-board").show();
-   
+        $(".loader-space").hide();
     })
+    $(document).on("click",".close-board-history",function() {
+        $(".history-board").hide();
+    });
+    $(".jackpot-rule").on("click",function(){
+        $(".game-limit").css({"color":"white","border":"transparent" })
+        $(".game-rules").css({"color":"white","border":"transparent" })
+        $(this).css({"border-bottom":"10px solid #bfae4b","color":"#bfae4b" });
+        $(".game-limit-description").hide();
+        $(".game-rules-description").hide();
+        $(".game-jackpot-description").show();
+        $(".div-for-rules").show()
+    })
+    $(".game-limit").on("click",function(){
+        $(".jackpot-rule").css({"color":"white","border":"transparent" })
+        $(".game-rules").css({"color":"white","border":"transparent" })
+        $(this).css({"border-bottom":"10px solid #bfae4b","color":"#bfae4b" });
+        $(".game-jackpot-description").hide();
+        $(".game-rules-description").hide();
+        $(".game-limit-description").show();
+        $(".div-for-rules").show();    
+    })
+    $(".game-rules").on("click",function(){
+        $(".jackpot-rule").css({"color":"white","border":"transparent" })
+        $(".game-limit").css({"color":"white","border":"transparent" })
+        $(this).css({"border-bottom":"10px solid #bfae4b","color":"#bfae4b" });
+        $(".game-jackpot-description").hide();
+        $(".game-limit-description").hide();
+        $(".game-rules-description").show();        
+    })
+    $(".limits-button").on("click",function(){
+        $(".div-for-rules").show();
+    });
+    $(document).on("click",".close-rules",function() {
+        $(".div-for-rules").hide();
+    });
+    let table = document.querySelector(".left-center");
+
+    function printMousePos(event) {
+        let div = document.createElement("div")
+        let img = '<img src="/Content/Images/0.1GEL.png" alt="" class="asdasd" >';
+    
+        // table.innerHTML = img;
+        div.innerHTML = img;
+
+        table.append(div);
+
+        $(".asdasd").css({"position":"absolute","left":event.clientX +"px","top":event.clientY +"px","width":"30px","height":"30px"})
+        // $(".asdasd").style.left = event.clientX + "px";
+        // $(".asdasd").style.top = event.clientY + "px";
+      }
+    
+      table.addEventListener("click", printMousePos);
 });
 
+// console.log
+// (    "clientX: " + event.clientX +
+// " - clientY: " + event.clientY)

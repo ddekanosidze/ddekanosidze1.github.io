@@ -13,8 +13,11 @@
     src: url(../Fonts/crystaluni-medium-webfont.woff2);
 
 } 
-body{
-    
+*{
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
 .main-div{
     height: 1024px;
@@ -88,6 +91,9 @@ body{
     right: 0;
     margin: 0 auto;
     z-index: 2;
+}
+.left-center{
+    position: relative;
 }
 .menu-left-side{
     width: 224px;
@@ -280,12 +286,14 @@ body{
   
 .last-houndreed-numbers-container::-webkit-scrollbar,
 .user-game-history::-webkit-scrollbar,
-.favorites-content::-webkit-scrollbar{
+.favorites-content::-webkit-scrollbar,
+.scroll-rule::-webkit-scrollbar{
     width: 20px;
 }
 .last-houndreed-numbers-container::-webkit-scrollbar-track,
 .user-game-history::-webkit-scrollbar-track,
-.favorites-content::-webkit-scrollbar-track {
+.favorites-content::-webkit-scrollbar-track,
+.scroll-rule::-webkit-scrollbar-track {
     border-radius: 3px;
     height: 10px;
     
@@ -293,7 +301,8 @@ body{
   }
   .last-houndreed-numbers-container::-webkit-scrollbar-thumb,
   .user-game-history::-webkit-scrollbar-thumb,
-  .favorites-content::-webkit-scrollbar-thumb {
+  .favorites-content::-webkit-scrollbar-thumb,
+  .scroll-rule::-webkit-scrollbar-thumb {
     border-radius: 3px;
     background-color: #21477c;
     height: 10px;
@@ -789,17 +798,33 @@ body{
     width: 258px;
     height: 258px;
     border-radius: 50%;
-    background-color: red;
     top: 48px;
     left:90px;
+    background: url(/Content/Images/ROULETTE.png)no-repeat center;
+}
+.stats-numbers  > ul{
+    display: flex;
+    justify-content: space-between;
+    line-height: 200px;
+}
+.stats-numbers li{
+  
+    list-style: none;
+    width: 55px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    color: white;
+    font-size: 23px;
+    border-radius: 3px;
+    margin-top: 40px;
 }
 .stats-numbers{
     position: absolute;
     width: 304px;
     height: 100px;
-    background-color: blueviolet;
+   
     left: 69px;
-    
 }
 .history-board{
     width: 576px;
@@ -881,17 +906,23 @@ body{
     position: absolute;
     top: 122px;
     width: 576px;
-    height: 912px;
+    height: 902px;
     background-color: #0b274f;
     background-image: -moz-linear-gradient( 120deg, rgb(5,25,53) 0%, rgb(14,45,91) 100%);
     background-image: -webkit-linear-gradient( 120deg, rgb(5,25,53) 0%, rgb(14,45,91) 100%);
     background-image: -ms-linear-gradient( 120deg, rgb(5,25,53) 0%, rgb(14,45,91) 100%);
     z-index: 3;
 }
+.history-on-board  .table-center,
+.history-on-board  .table-left-side,
+.history-on-board  .table-right-side-board{
+    position: absolute;
+    top: 30px;
+}
 .history-on-board-header{
     position: absolute;
-    width: 100%;
-    height: 112px;
+    width: 576px;
+    height: 122px;
     top: 0;
     background-color: #071831;
     text-align: center;
@@ -949,19 +980,58 @@ body{
 
 }
 .hot{
-    top: 325px;
+    top: 315px;
+    color: #ff3131;
+    font-size: 25px;
+    font-family: "CrystalBetUniMedium";
+
 }
 .cold{
     top: 452px;
+    color: #71d8fa;
+    font-size: 25px;
+    font-family: "CrystalBetUniMedium";
+}
+.cold > span,
+.hot  > span {
+    position: absolute;
+    top: -2px;
+    border-bottom:1px solid #284061 ;
+    width: 290px;
+    height: 30px;
 }
 .stats-other{
     position: absolute;
     width: 304px;
     height: 184px;
-    background-color: brown;
     top: 583px; 
     left: 69px;
 }
+.stats-other >ul{
+    display: grid;
+    grid-template-columns: 148px 148px ;
+    grid-template-rows: 56px 56px 56px ;
+    grid-gap:8px;
+    line-height: 184px;
+    
+}
+.stats-other >ul>li{
+    font-size: 22.4px;
+    border-radius: 3px;
+    background-color:#213857;
+    line-height: 56px;
+    text-align: center;
+    padding-left: 5px;
+    font-family: "CrystalBetUniMedium";
+    color: white;
+}
+.stats-other >ul>li>span{ 
+    margin-left: 30px;
+    color: #8ea5c6;
+    font-size: 22.4px;
+    
+}
+
 .favorites-content{
     width: 438px;
     height: 781px;
@@ -994,6 +1064,75 @@ body{
     text-align: center;
     line-height: 54px;
     z-index: 1;
+}
+.div-for-rules{
+    width: 576px;
+    height: 1024px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+.rules-header{
+    position: absolute;
+    width: 576px;
+    height: 122px;
+    top: 0;
+    background-color: #071831;
+    text-align: center;
+    z-index: 3;
+   
+}
+.close-rules{
+    display: block;
+    position: absolute;
+    width: 34px;
+    height: 34px;
+    right: 34px;
+    top: 42px;
+}
+.rules-header >div{
+    display: flex;
+    justify-content: space-between; 
+    width: 420px ;
+    text-align: center;
+    margin-left: 34px;
+}
+.rules-header span{
+    font-size: 22.4px;
+    color: white;
+    font-family: "CrystalBetUniMedium";
+    width: 127px;
+    margin-top: 34px;
+    height: 76px;
+}
+.rules-header span.active{
+    border-bottom: 10px solid #bfae4b ;
+    color: #bfae4b;
+}
+
+.rules-main{
+    position: absolute;
+    top: 122px;
+    width: 576px;
+    height: 902px;
+    background-color: #0b274f;
+    background-image: -moz-linear-gradient( 120deg, rgb(5,25,53) 0%, rgb(14,45,91) 100%);
+    background-image: -webkit-linear-gradient( 120deg, rgb(5,25,53) 0%, rgb(14,45,91) 100%);
+    background-image: -ms-linear-gradient( 120deg, rgb(5,25,53) 0%, rgb(14,45,91) 100%);
+    z-index: 3;
+}
+.rules-main>span{
+    width: 529px;
+    height: 862px;
+    font-size: 26px;
+    color: #576a86;
+    font-family: "CrystalBetUniMedium";
+    position: absolute;
+    top: 36px;
+    left: 25px;
+    overflow-y: scroll;
 }
 
 .more-chips :after{
