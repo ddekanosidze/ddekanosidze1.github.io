@@ -193,16 +193,17 @@ $(document).ready(function () {
       }
     
       table.addEventListener("click", printMousePos);
-});
-
-
-
-function closeTab(current) {
-    $(".closeTab").each(function(){
-        $(this).removeClass('active');
     });
-    $(current).addClass('active');
-}
+    
+    
+    
+    function closeTab(current) {
+        $(".closeTab").each(function(){
+            $(this).removeClass('active');
+        });
+        $(current).addClass('active');
+    }
+    
     $(window).resize(function () {
         scaleDiv();
     });

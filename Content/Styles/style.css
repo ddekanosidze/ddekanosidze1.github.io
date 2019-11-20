@@ -25,10 +25,10 @@ body{
     overflow-y: hidden;
 }
 .main-div{
-    position: relative;
     height: 1024px;
     width: 576px;
     margin: 0 auto;
+    position: relative;
     
 }
 .header{
@@ -1226,3 +1226,16 @@ body{
     color: #372e04;
     font-family: "CrystalBetUniMedium";
 }
+
+
+
+
+.content-div {
+    position: absolute;
+    -webkit-transform-origin: top left;
+    -ms-transform-origin: top left;
+    transform-origin: top left;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
