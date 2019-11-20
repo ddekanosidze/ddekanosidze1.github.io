@@ -203,4 +203,27 @@ function closeTab(current) {
     });
     $(current).addClass('active');
 }
+    $(window).resize(function () {
+        scaleDiv();
+    });
+    
+    scaleDiv();
 
+function scaleDiv() {
+    var width = $(window).width();
+    var height = $(window).height();
+    var o_width = 576;
+    var o_height = 1024;
+    var w_scale = 0;
+    var h_scale = 0;
+    var m_scale = 0;
+    var r_deg = 0;
+    w_scale = width / o_width;
+    h_scale = height / o_height;
+    m_scale = Math.min(w_scale, h_scale);
+    game_scale = m_scale;
+    var bottom = (height / game_scale - o_height);
+
+    $('.content-div').css({'transform': 'scale(' + game_scale + ',' + game_scale + ') ', 'left': (r_deg == 90 ? '100%' : '0px'), 'top': '0px'});
+    $('.main-div').css({ 'margin-left': '-290px', 'left': (width / 2) / game_scale });
+}
