@@ -25,6 +25,7 @@ body{
     overflow-y: hidden;
 }
 .main-div{
+    position: relative;
     height: 1024px;
     width: 576px;
     margin: 0 auto;
