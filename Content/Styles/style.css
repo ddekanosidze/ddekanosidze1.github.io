@@ -23,6 +23,7 @@
 body{
     overflow-x: hidden;
     overflow-y: hidden;
+    background-color:#103c70;
 }
 .main-div{
     height: 1024px;
@@ -31,6 +32,7 @@ body{
     position: relative;
     
 }
+
 .header{
     display: flex;
     align-items:center ;
@@ -475,6 +477,7 @@ body{
     height: 100%;
     width: 100%;
 }
+
 .special-buttons  li.border{
     height: 74px;
     width: 96px;
@@ -488,14 +491,46 @@ body{
     font-family: "CrystalBetUniBold";
     font-size: 17.6px;
     color: #4a6590;
-} 
+}
+.red,
+.green,
+.black{
+    position: relative;
+}
+.green>img{
+    position: absolute;
+    left: 112px;
+    top: 6px;
+    width: 35px;
+    height: 35px;
+}
+.red > img,
+.black >img{
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    line-height: 96px;
+    left: 25px;
+    top: 10px;
+}
+.coin  {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 76px;
+    position: absolute;
+    left: -7px;
+    top: -12px;
+   
+}
+
 .button-chip{
     background-image: url(/Content/Images/0.1GEL.png);
     width: 96px;
     height: 74px;
     background-size: contain;
     background-repeat: no-repeat;
-    text-align: center;
     line-height: 74px;
     list-style: none;
     margin-left: 20px;
@@ -1226,6 +1261,531 @@ body{
     color: #372e04;
     font-family: "CrystalBetUniMedium";
 }
+.corner-bets{
+    position: absolute;
+    /* background: blue; */
+    width: 14px;
+    height: 14px;
+    /* z-index: 10; */
+}
+.corner-zero-three{
+    top: 52px;
+    left: 158px;
+}
+.corner-zero-one-two{
+    top: 52px;
+    left: 244px;
+}
+.corner-zero-two-three{
+    top: 52px;
+    left: 330px;
+}
+.corner-one-five{
+    top: 107px;
+    left: 244px;
+}
+.corner-two-six{
+    top: 107px;
+    left: 330px;
+}
+.corner-one-six{
+    top: 107px;
+    left: 158px;
+}
+.corner-four-eight{
+    top: 162px;
+    left: 244px;
+}
+.corner-five-nine{
+    top: 162px;
+    left: 330px;
+}
+.corner-four-nine{
+    top: 162px;
+    left: 158px;
+}
+.corner-seven-eleven{
+    top: 217px;
+    left: 244px;
+}
+.corner-eight-twelve{
+    top: 217px;
+    left: 330px;
+}
+.corner-seven-twelve{
+    top: 217px;
+    left: 158px;
+}
+.corner-ten-fourteen{
+    top: 275px;
+    left: 244px;
+}
+.corner-eleven-fifteen{
+    top: 275px;
+    left: 330px;
+}
+.corner-ten-fifteen{
+    top: 275px;
+    left: 158px;
+}
+.corner-thirteen-seventeen{
+    top: 330px;
+    left: 244px;
+}
+.corner-fourteen-eighteen{
+    top: 330px;
+    left: 330px;
+}
+.corner-thirteen-eighteen{
+    top:330px;
+    left: 158px;
+}
+.corner-sixteen-twenty{
+    top: 386px;
+    left: 244px;
+}
+.corner-seventeen-twentyone{
+    top: 386px;
+    left: 330px;
+}
+.corner-sixteen-twentyone{
+    top:386px;
+    left: 158px;
+}
+.corner-nineteen-twentythree{
+    top:443px;
+    left: 244px;
+}
+.corner-twenty-twentyfour{
+    top:443px;
+    left: 330px;
+}
+.corner-nineteen-twentyfour{
+    top:443px;
+    left: 158px;
+}
+.corner-twentytwo-twentysix{
+    top:499px;
+    left: 244px;
+}
+.corner-twentythree-twentyseven{
+    top:499px;
+    left: 330px;
+}
+.corner-twentytwo-twentyseven{
+    top:499px;
+    left: 158px;
+}
+.corner-twentyfive-twentynine{
+    top:555px;
+    left: 244px;
+}
+.corner-twentysix-thirty{
+    top:555px;
+    left: 330px;
+}
+.corner-twentyfive-thirty{
+    top:555px;
+    left: 158px;
+}
+.corner-twentyeight-thirtytwo{
+    top:610px;
+    left: 244px;
+}
+.corner-twentynine-thirtythree{
+    top:610px;
+    left: 330px;
+}
+.corner-twentyeight-thirtythree{
+    top:610px;
+    left: 158px;
+}
+.corner-thirtyone-thirtyfive{
+    top:667px;
+    left: 244px;
+}
+.corner-thirtytwo-thirtysix{
+    top:667px;
+    left: 330px;
+}
+.corner-thirtyone-thirtysix{
+    top:667px;
+    left: 158px;
+}
+.split{
+    position: absolute;
+    width: 55px;
+    height: 7px;
+    /* background-color: blue; */
+}
+/* .split>img{
+    position: absolute;
+    width: 29px;
+    height: 29px;
+    left: 4px;
+    top: -12px;
+} */
+.third-line-row >img{
+    position: absolute;
+    width: 29px;
+    height: 29px;
+    left: 2px;
+    top: -12px;
+}
+.second-line-row>img{
+    position: absolute;
+    width: 29px;
+    height: 29px;
+    left: 10px;
+    top: -12px;
+}
+.first-line-row>img{
+    position: absolute;
+    width: 29px;
+    height: 29px;
+    left: 16.5px;
+    top: -12px;
+}
+.column-split>img{
+    position: absolute;
+    transform: rotate(-90deg);
+    width: 29px;
+    height: 29px;
+    top: -12px;
+}
+.zero-one{
+    left: 174px;
+    top: 54px;
+}
+.zero-two{
+    left: 267px;
+    top: 54px;
+}
+.zero-three{
+    left: 362px;
+    top: 54px;
+}
+
+.one-four{
+    left: 174px;
+    top: 108px;
+
+}   
+.two-five{
+    left: 267px;
+    top: 108px;
+}
+.three-six{
+    left: 362px;
+    top: 108px;
+}
+.four-seven{
+    left: 174px;
+    top: 162px;
+
+}   
+.five-eight{
+    left: 267px;
+    top: 162px;
+}
+.six-nine{
+    left: 362px;
+    top: 162px;
+}
+
+.seven-ten{
+    left: 174px;
+    top: 221px;
+}   
+.eight-eleven{
+    left: 267px;
+    top: 221px;
+}
+.nine-twelve{
+    left: 362px;
+    top: 221px;
+}
+
+.ten-thirteen{
+    left: 174px;
+    top: 277px;
+}   
+.eleven-forteen{
+    left: 267px;
+    top: 277px;
+}
+.twelve-fifteen{
+    left: 362px;
+    top: 277px;
+}
+
+.thirteen-sixteen{
+    left: 174px;
+    top: 332px;
+}   
+.forteen-seventeen{
+    left: 267px;
+    top: 332px;
+}
+.fifteen-eighteen{
+    left: 362px;
+    top: 332px;
+}
+
+.sixteen-nineteen{
+    left: 174px;
+    top: 388px;
+}   
+.seventeen-twenty{
+    left: 267px;
+    top: 388px;
+}
+.eighteen-twentyone{
+    left: 362px;
+    top: 388px;
+}
+
+.nineteen-twentytwo{
+    left: 174px;
+    top: 444px;
+}   
+.twenty-twentythree{
+    left: 267px;
+    top: 444px;
+}
+.twentyone-twentyfour{
+    left: 362px;
+    top: 444px;
+}
+.twentytwo-twentyfive{
+    left: 362px;
+    top: 444px;
+}
+
+.twentytwo-twentyfive{
+    left: 174px;
+    top: 500px;
+}   
+.twentythree-twentysix{
+    left: 267px;
+    top: 500px;
+}
+.twentyfour-twentyseven{
+    left: 362px;
+    top: 500px;
+}
+
+.twentyfive-twentyeight{
+    left: 174px;
+    top: 556px;
+}   
+.twentysix-twentynine{
+    left: 267px;
+    top: 556px;
+}
+.twentyseven-thirty{
+    left: 362px;
+    top: 556px;
+}
+
+.twentyeight-thirtyone{
+    left: 174px;
+    top: 613px;
+}   
+.twentynine-thirtytwo{
+    left: 267px;
+    top: 613px;
+}
+.thirty-thirtythree{
+    left: 362px;
+    top: 613px;
+}
+
+.thirtyone-thirtyfour{
+    left: 174px;
+    top: 669px;
+}   
+.thirtytwo-thirtyfive{
+    left: 267px;
+    top: 669px;
+}
+.thirtythree-thirtysix{
+    left: 362px;
+    top: 669px;
+}
+
+.one-two{
+    left: 233px;
+    top: 80px;
+    transform: rotate(90deg);
+    width: 30px;
+
+}
+.two-three{
+    transform: rotate(90deg);
+    width: 30px;
+    left: 320px;
+    top: 80px;
+}
+
+.five-six{
+    left: 233px;
+    top: 140px;
+    transform: rotate(90deg);
+    width: 30px;
+
+}
+.four-five{
+    transform: rotate(90deg);
+    width: 30px;
+    left: 320px;
+    top: 140px;
+}
+.seven-eight{
+    left: 233px;
+    top: 192px;
+    transform: rotate(90deg);
+    width: 30px;
+
+}
+.eight-nine{
+    transform: rotate(90deg);
+    width: 30px;
+    left: 320px;
+    top: 192px;
+}
+.ten-eleven{
+    left: 233px;
+    top: 248px;
+    transform: rotate(90deg);
+    width: 30px;
+
+}
+.eleven-twelve{
+    transform: rotate(90deg);
+    width: 30px;
+    left: 320px;
+    top: 248px;
+}
+
+.thirteen-forteen{
+    left: 233px;
+    top: 304px;
+    transform: rotate(90deg);
+    width: 30px;
+
+}
+.forteen-fifteen{
+    transform: rotate(90deg);
+    width: 30px;
+    left: 320px;
+    top: 304px;
+}
+
+.sixteen-seventeen{
+    left: 233px;
+    top: 360px;
+    transform: rotate(90deg);
+    width: 30px;
+
+}
+.seventeen-eighteen{
+    transform: rotate(90deg);
+    width: 30px;
+    left: 320px;
+    top: 360px;
+}
+
+.nineteen-twenty{
+    left: 233px;
+    top: 418px;
+    transform: rotate(90deg);
+    width: 30px;
+
+}
+.twenty-twentyone{
+    transform: rotate(90deg);
+    width: 30px;
+    left: 320px;
+    top: 418px;
+}
+
+.twentytwo-twentythree{
+    left: 233px;
+    top: 478px;
+    transform: rotate(90deg);
+    width: 30px;
+
+}
+.twentythree-twentyfour{
+    transform: rotate(90deg);
+    width: 30px;
+    left: 320px;
+    top: 478px;
+}
+
+.twentyfive-twentysix{
+    left: 233px;
+    top: 530px;
+    transform: rotate(90deg);
+    width: 30px;
+
+}
+.twentysix-twentyseven{
+    transform: rotate(90deg);
+    width: 30px;
+    left: 320px;
+    top: 530px;
+}
+
+.twentyeight-twentynine{
+    left: 233px;
+    top: 586px;
+    transform: rotate(90deg);
+    width: 30px;
+
+}
+.twentynine-thirty{
+    transform: rotate(90deg);
+    width: 30px;
+    left: 320px;
+    top: 586px;
+}
+
+.thirtyone-thirtytwo{
+    left: 233px;
+    top: 642px;
+    transform: rotate(90deg);
+    width: 30px;
+
+}
+.thirtytwo-thirtythree{
+    transform: rotate(90deg);
+    width: 30px;
+    left: 320px;
+    top: 642px;
+}
+
+.thirtyfour-thirtyfive{
+    left: 233px;
+    top: 698px;
+    transform: rotate(90deg);
+    width: 30px;
+
+}
+.thirtyfive-thirtysix{
+    transform: rotate(90deg);
+    width: 30px;
+    left: 320px;
+    top: 698px;
+}
+
+
+
+
+
+
+
 
 
 

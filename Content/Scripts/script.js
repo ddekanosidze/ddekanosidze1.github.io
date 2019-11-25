@@ -66,6 +66,9 @@ $(document).ready(function () {
         $(".main").removeClass("background-racetrack");
         $(".background-black").css("background","#112a4c");
         $(".div-for-racetrack").hide()
+        $(".div-for-favorites").hide()
+        $(".div-for-stats").hide()
+
 
     });
     $(document).on("click",".favorites",function() {
@@ -84,7 +87,9 @@ $(document).ready(function () {
         $(".left-center").show();
         $(".main").removeClass("background-racetrack");
         $(".background-black").css("background","#112a4c")
+        $(".div-for-racetrack").hide()
         $(".div-for-favorites").hide()
+        $(".div-for-stats").hide()
 
     });
     $(document).on("click",".stats",function() {
@@ -102,6 +107,8 @@ $(document).ready(function () {
         $(".left-center").show();
         $(".main").removeClass("background-racetrack");
         $(".background-black").css("background","#112a4c")
+        $(".div-for-racetrack").hide()
+        $(".div-for-favorites").hide()
         $(".div-for-stats").hide()
 
     });
@@ -176,27 +183,61 @@ $(document).ready(function () {
     $(document).on("click",".close-rules",function() {
         $(".div-for-rules").hide();
     });
-    let table = document.querySelector(".left-center");
-
-    function printMousePos(event) {
-        let div = document.createElement("div")
-        let img = '<img src="/Content/Images/0.1GEL.png" alt="" class="asdasd" >';
+  
+  
     
-        // table.innerHTML = img;
-        div.innerHTML = img;
+    let countBet = 0;
+    $(".corner-bets").on("click",function(){
+        let img = `<img src="/Content/Images/${bet}GEL.png" alt="" class="coin"  >` ;
+        $(this).append(img);
+        countBet = 0
+        countBet += 100;  
+    });
 
-        table.append(div);
+    let bet = 0.1;   
+    $(".chip").on("click",function(){
+        bet = $(this).data("name");
+        $(".more-chips").fadeOut(200);
+        $(".button-chip").css("background-image",$(this).css("background-image"))
+    });
 
-        $(".asdasd").css({"position":"absolute","left":event.clientX +"px","top":event.clientY +"px","width":"30px","height":"30px"})
-        // $(".asdasd").style.left = event.clientX + "px";
-        // $(".asdasd").style.top = event.clientY + "px";
-      }
-    
-      table.addEventListener("click", printMousePos);
+    $(".red").on("click",function(){
+        let img = `<img src="/Content/Images/${bet}GEL.png" alt="" class="one-number" > `;
+        $(this).append(img);
+    });
+
+    $(".black").on("click",function(){
+        let img = `<img src="/Content/Images/${bet}GEL.png" alt=""  class="one-number" > `;
+        $(this).append(img);
+    });
+
+    $(".green").on("click",function(){
+        let img = `<img src="/Content/Images/${bet}GEL.png" alt=""  class="one-number" > `;
+        $(this).append(img);
+    });
+    $(".split").on("click",function(){
+        let img = `<img src="/Content/Images/${bet}GEL.png" alt=""  class="one-number" > `;
+        $(this).append(img);
     });
     
+
+   
+});
     
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     function closeTab(current) {
         $(".closeTab").each(function(){
             $(this).removeClass('active');
@@ -206,6 +247,7 @@ $(document).ready(function () {
     
     $(window).resize(function () {
         scaleDiv();
+
     });
     
     scaleDiv();
