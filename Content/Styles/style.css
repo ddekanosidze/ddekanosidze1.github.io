@@ -226,9 +226,7 @@ body{
     top: 33px;
     background-size: contain;
     overflow: hidden;
-    overflow-y: scroll;
-    /* scrollbar-width: 10px; */
-    
+    overflow-y: scroll;   
 }
 .user-game-history{
     width: 550px;
@@ -263,6 +261,7 @@ body{
     opacity: 0.302;
     margin-top: 2px;
     margin-left:15px;
+    position: relative;
 }
 
 .user-bet-history>li>span{
@@ -272,21 +271,31 @@ body{
    text-align: center;
    line-height: 27px;
     margin-left: 5px;
+    position: absolute;
 }
 .user-bet-history>li :first-child{
-    margin-left: 18px;
+    left: 18px;
+    top: 20px;
 }
 .user-bet-history>li>span.play-time{
     display: inline-block;
     width: 135px;
+    top: 11px;
+    left: 84px;
+}
+.bet-money{
+    left: 247px;
+    top: 20px;
+}
+.user-bet-history>li>span.won-money{
+    left: 346px;
+    top: 20px;
 }
 
-.user-bet-history>li>span.won-money{
-    margin-left: 20px;
-}
 .user-bet-history>li>img.hidden-eye-logo{
-    margin-left: 20px;
-    margin-top: -5px;
+    position: absolute;
+    right: 12px;
+    top: 11px;
     border-radius: 3px;
     background-color: black;
     border: 1px solid white;
@@ -324,7 +333,7 @@ body{
     color: white;
     font-family:CrystalBetUniMedium;
     border-radius: 3px;
-    
+    width: 64px;
 
 }
 .close-tab{
@@ -382,6 +391,14 @@ body{
 }
 .line-height-two-row{
     line-height: 224.6px;
+    
+}
+.rotate>img{
+    transform: rotate(270deg);
+}
+.rotate-half>img{
+    transform: rotate(315deg);
+
 }
 .line-height-one-row{
     line-height: 112.3px;
@@ -394,6 +411,44 @@ body{
     color: #ffffff;
     font-family: "CrystalBetUni";
 }
+.other-bets>img{
+    position: absolute;
+    width: 35px;
+    height: 35px;
+}
+.line-height-two-row >img{
+    left: 16px;
+    top: 101px;
+}
+.table-left-side .line-height-one-row>img{
+    left: 11px;
+    top: 38px;
+}
+.table-left-side .bet-numbers>img{
+    left: -4px;
+    top: -6px;
+}
+.column-bet>img{
+        position: absolute;
+        width: 29px;
+        height: 29px;
+      
+        top: 745px;
+}
+.first-Column>img{
+    
+    left: 28px;
+}
+.second-Column>img{
+    
+    left: 115px;
+}
+.third-Column>img{
+    
+    left: 203px;
+}
+
+
 .other-bets>.row{
     font-size: 19px;
 }
@@ -458,6 +513,12 @@ body{
 }
 .red{
     background-color: #e92112;
+}
+.Red{
+    background-color: #e92112;
+}
+.Black{
+    background-color: #1a1a1a
 }
 .table-right-side{
     position: absolute;
@@ -526,7 +587,7 @@ body{
 }
 
 .button-chip{
-    background-image: url(/Content/Images/0.1GEL.png);
+    background-image: url(/Content/Images/10GEL.png);
     width: 96px;
     height: 74px;
     background-size: contain;
@@ -933,7 +994,10 @@ body{
 }
 .game-id-history{
     top: 185px;
-;
+}
+.test{
+    display: flex;
+    justify-content: center;
 }
 .game-balance-history{
     top: 305px;
@@ -1266,7 +1330,7 @@ body{
     /* background: blue; */
     width: 14px;
     height: 14px;
-    /* z-index: 10; */
+    
 }
 .corner-zero-three{
     top: 52px;
@@ -1415,8 +1479,8 @@ body{
 .split{
     position: absolute;
     width: 55px;
-    height: 7px;
-    /* background-color: blue; */
+    height: 11px;
+    
 }
 /* .split>img{
     position: absolute;
@@ -1452,6 +1516,117 @@ body{
     width: 29px;
     height: 29px;
     top: -12px;
+    left: -6px;
+}
+.street>img{
+    position: absolute;
+    transform: rotate(-90deg);
+    width: 29px;
+    height: 29px;
+    top: -9px;
+    left: -4px;
+}
+
+.red :last-child,
+.black :last-child,
+.green :last-child,
+.other-bets :last-child,
+.split :last-child,
+.column-bet :last-child,
+.street :last-child,
+.corner-bets :last-child
+
+{
+    /* display: block; */
+    margin-top: 5px;
+}
+.red :not(:first-child):not(:last-child),
+.black :not(:first-child):not(:last-child),
+.green :not(:first-child):not(:last-child),
+.other-bets :not(:first-child):not(:last-child),
+.split :not(:first-child):not(:last-child),
+.column-bet :not(:first-child):not(:last-child),
+.street :not(:first-child):not(:last-child),
+.corner-bets :not(:first-child):not(:last-child)
+
+{
+    margin-top: 2px;
+}
+.street{
+    position: absolute;
+    width: 22px;
+    height: 12px;
+}
+
+.street-one{
+    transform: rotate(90deg);
+    left: 150px;
+    top: 77px;
+}
+
+.street-four{
+    transform: rotate(90deg);
+    left: 150px;
+    top: 135px;
+}
+.street-seven{
+    transform: rotate(90deg);
+    left: 150px;
+    top: 192px;
+}
+.street-ten{
+    left: 150px;
+    transform: rotate(90deg);
+    top: 249px;
+}
+.street-thirteen{
+    transform: rotate(90deg);
+    left: 150px;
+    top: 304px;
+}
+.street-sixteen{
+    transform: rotate(90deg);
+    left: 150px;
+    top: 360px;
+}
+.street-nineteen{
+    transform: rotate(90deg);
+    left: 150px;
+    top: 417px;
+}
+.street-twentytwo{
+    transform: rotate(90deg);
+    left: 150px;
+    top: 472px;
+}
+.street-twentyfive{
+    transform: rotate(90deg);
+    left: 150px;
+    top: 529px;
+}
+.street-twentyeight{
+    transform: rotate(90deg);
+    left: 150px;
+    top: 585px;
+}
+
+.street-thirtyone{
+    transform: rotate(90deg);
+    left: 150px;
+    top: 636px;
+}
+.street-thirtyfour{
+    transform: rotate(90deg);
+    left: 150px;
+    top: 692px;
+}
+
+.street>img{
+    position: absolute;
+    transform: rotate(-90deg);
+    width: 29px;
+    height: 29px;
+    /* top: -12px; */
 }
 .zero-one{
     left: 174px;

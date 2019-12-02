@@ -43,6 +43,8 @@ $(document).ready(function () {
     $(document).on("click",".close-history",function() {       
             $(".history").addClass("none");
             $(".open-menu").addClass("none");
+            $(".loader-space").show();
+
     });
     
     $(".button-chip").click(function(){
@@ -112,16 +114,20 @@ $(document).ready(function () {
         $(".div-for-stats").hide()
 
     });
-    $(".hidden-eye-logo").on("click",function(){
+    
+        $(document).on("click",".hidden-eye-logo",function() {
         $(".history-board").show();
    
     })
     $(".board-history-button").on("click",function(){
         $(".history-board").show();
         $(".loader-space").hide();
+        
     })
     $(document).on("click",".close-board-history",function() {
         $(".history-board").hide();
+        $(".loader-space").show();
+
     });
     $(".jackpot-rule").on("click",function(){
         $(".game-limit").css({"color":"white","border":"transparent" })
@@ -182,53 +188,181 @@ $(document).ready(function () {
     });
     $(document).on("click",".close-rules",function() {
         $(".div-for-rules").hide();
+        $(".loader-space").show();
     });
   
   
     
-    let countBet = 0;
     $(".corner-bets").on("click",function(){
         let img = `<img src="/Content/Images/${bet}GEL.png" alt="" class="coin"  >` ;
         $(this).append(img);
-        countBet = 0
-        countBet += 100;  
+        console.log($(this).data("name"))  
     });
 
-    let bet = 0.1;   
+    let bet = 10;   
     $(".chip").on("click",function(){
         bet = $(this).data("name");
         $(".more-chips").fadeOut(200);
-        $(".button-chip").css("background-image",$(this).css("background-image"))
+        $(".button-chip").css("background-image",$(this).css("background-image"));
+        console.log($(this).data("name"))
     });
+    
 
     $(".red").on("click",function(){
-        let img = `<img src="/Content/Images/${bet}GEL.png" alt="" class="one-number" > `;
+        let img = `<img src="/Content/Images/${bet}GEL.png" alt="" class="asd" > `;
         $(this).append(img);
+        console.log($(this).data("name"));
+
     });
 
-    $(".black").on("click",function(){
-        let img = `<img src="/Content/Images/${bet}GEL.png" alt=""  class="one-number" > `;
+    $(".street").on("click",function(){
+        let img = `<img src="/Content/Images/${bet}GEL.png" alt=""   > `;
         $(this).append(img);
+        console.log($(this).data("name"));
+        console.log($(this))
+    });
+    $(".other-bets").on("click",function(){
+        let img = `<img src="/Content/Images/${bet}GEL.png" alt=""   > `;
+        $(this).append(img);
+        console.log($(this).data("name"));
+    });  
+    $(".column-bet").on("click",function(){
+        let img = `<img src="/Content/Images/${bet}GEL.png" alt=""   > `;
+        $(this).append(img);
+        console.log($(this).data("name"));
+
+    });
+    $(".black").on("click",function(){
+        let img = `<img src="/Content/Images/${bet}GEL.png" alt=""   > `;
+        $(this).append(img);
+        console.log($(this).data("name"));
+
     });
 
     $(".green").on("click",function(){
-        let img = `<img src="/Content/Images/${bet}GEL.png" alt=""  class="one-number" > `;
+        let img = `<img src="/Content/Images/${bet}GEL.png" alt=""   > `;
         $(this).append(img);
+        console.log($(this).data("name"));
+
     });
     $(".split").on("click",function(){
-        let img = `<img src="/Content/Images/${bet}GEL.png" alt=""  class="one-number" > `;
+        let img = `<img src="/Content/Images/${bet}GEL.png" alt="" > `;
         $(this).append(img);
+        console.log($(this).data("name"));
+        $("img")
+
     });
-    
+    function addBet(name,multiplier){
+        let image = `<img class="bet-chip" src="/Content/Images/${multiplier}GEL.png">`;
+	    let betChip = $("div[data-name='" + name  +"']");
+  	    $(betChip).append(image);
+    }
 
-   
+    $(".jackpot-win").html(data.JackpotAmount);
+    $(".user-balance").html(data.PlayerInfo.AvailableAmount);
+    $(".user-bet").html(data.PlayerInfo.PlacedAmount);
+    $(".user-win").html(data.PlayerInfo.WonAmount);
+    $(".percent-red").html(data.SpinsDistributionPercents.Red + "%");
+    $(".percent-black").html(data.SpinsDistributionPercents.black + "%");
+    $(".percent-odd").html(data.SpinsDistributionPercents.Odd + "%");
+    $(".percent-even").html(data.SpinsDistributionPercents.Even + "%");
+    $(".percent-till-eighteen").html(data.SpinsDistributionPercents.FirstHalf + "%");
+    $(".percent-from-nineteen").html(data.SpinsDistributionPercents.SecondHalf + "%");
+    $(".user-name").html(data.PlayerInfo.DisplayName);
+    $(".user-spin-id").html(data.SpinNumber);
+    
+    let counter = 2;
+    
+    $(".minus").on("click",function(){
+        
+        if(counter > 0 && counter <= 5){
+            counter--;
+            console.log(counter + "/5 neighbour")
+            $(".bet-neighbour").html(counter)    
+    }
+    })
+    $(".plus").on("click",function(){
+        
+        if(counter >= 0 && counter < 5){
+            counter++;
+            console.log(counter + "/5 neighbour")
+            $(".bet-neighbour").html(counter)
+        }
+    })
+    
+    for(let key in data.PlayerInfo.LatestSpins){
+        let dada =`<li>
+        <span  class="player-spin-id">${data.PlayerInfo.LatestSpins[key].SpinNumber}</span>
+        <span class="play-time">
+            ${data.PlayerInfo.LatestSpins[key].SpinDate}
+        </span>
+        <span class="bet-money" >${data.PlayerInfo.LatestSpins[key].BetAmount}</span>
+        <span class="won-money" >${data.PlayerInfo.LatestSpins[key].WonAmount}</span>
+        <img src="./Content/Images/eye.png" alt="" class="hidden-eye-logo" >
+        </li>`;
+        $(".user-bet-history").append(dada)
+        
+    }
+    let LastHoundreedSpins = data.Last100SpinNumbers;
+    for(let key in LastHoundreedSpins ){
+        
+        let li = `<li class="${LastHoundreedSpins[key].Color}" >${LastHoundreedSpins[key].Number}</li>`;
+        $(".last-houndreed-numbers-container").append(li);
+    }
+    
+    let  lastFourNumbers = `    
+    <div class="last-numbers ${LastHoundreedSpins[0].Color}" >${LastHoundreedSpins[0].Number}</div>
+    <div class="last-numbers ${LastHoundreedSpins[1].Color}">${LastHoundreedSpins[1].Number}</div>
+    <div class="last-numbers ${LastHoundreedSpins[2].Color}">${LastHoundreedSpins[2].Number}</div>
+    <div class="last-numbers ${LastHoundreedSpins[3].Color}" >${LastHoundreedSpins[3].Number}</div>
+    `; 
+
+    $(".last-numbers-history").prepend(lastFourNumbers);
+    for(let key in data.SpinsDistributionPercents.ColdNumbers){
+
+        if(data.SpinsDistributionPercents.ColdNumbers[key].Color === 1){
+            data.SpinsDistributionPercents.ColdNumbers[key].Color = "Red";
+        }
+        if(data.SpinsDistributionPercents.ColdNumbers[key].Color === 0){
+            data.SpinsDistributionPercents.ColdNumbers[key].Color = "Black";
+        }
+    }   
+    for(let key in data.SpinsDistributionPercents.HotNumbers){
+       
+        if(data.SpinsDistributionPercents.HotNumbers[key].Color === 1){
+            data.SpinsDistributionPercents.HotNumbers[key].Color = "Red";
+        }
+        if(data.SpinsDistributionPercents.HotNumbers[key].Color === 0){
+            data.SpinsDistributionPercents.HotNumbers[key].Color = "Black";
+        }
+    }   
+    for(let key in data.SpinsDistributionPercents.ColdNumbers){
+        let coldNumbers = `<li class="${data.SpinsDistributionPercents.ColdNumbers[key].Color} " >${data.SpinsDistributionPercents.ColdNumbers[key].Number}</li>`;
+        $(".ul-for-cold").append(coldNumbers);
+    }
+    for(let key in data.SpinsDistributionPercents.HotNumbers){
+        let hotNumbers = `<li class="${data.SpinsDistributionPercents.HotNumbers[key].Color} " >${data.SpinsDistributionPercents.HotNumbers[key].Number}</li>`;
+        $(".ul-for-hot").append(hotNumbers);
+    }
+
+    // $( ".bet-chip" ).each( function(){
+    //     if($( this ).attr('data-name') == "basket 0/1/2/3") {
+    //         let img = `<img src="/Content/Images/${bet}GEL.png" alt=""  class="coin" > `;
+    //         $(this).append(img);
+    //     }
+    // });
+    // console.log($(".bet-chip").attr('data-name'))
+
+    for(index = 0;index < data.PlayerInfo.PlacedBets.length;index ++){
+
+        let name = data.PlayerInfo.PlacedBets[index].BetName;
+        let multiplier = data.PlayerInfo.PlacedBets[index].Multiplier;
+        addBet(name,multiplier)
+    }
 });
-    
 
 
-
-
-
+  
 
 
 
