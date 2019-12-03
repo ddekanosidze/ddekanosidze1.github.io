@@ -99,8 +99,10 @@ $(document).ready(function () {
         $(this).addClass('active');
         $(".left-center, .racetrack, .favorites-content").hide();
         $(".main").addClass("background-racetrack");
-        $(".background-black").css("background","black")
-        $(".div-for-stats").show()
+        $(".background-black").css("background","black");
+        $(".div-for-stats").show();
+        $(".corner-bets").hide();
+        $(".split").hide();
 
     });
     $(document).on("click",".stats.active",function() {
@@ -112,6 +114,9 @@ $(document).ready(function () {
         $(".div-for-racetrack").hide()
         $(".div-for-favorites").hide()
         $(".div-for-stats").hide()
+        $(".corner-bets").show();
+        $(".split").show();
+
 
     });
     
