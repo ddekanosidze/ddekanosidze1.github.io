@@ -58,7 +58,9 @@ $(document).ready(function () {
         $(".left-center, .favorites-content, .div-for-stats").hide();
         $(".main").addClass("background-racetrack");
         $(".background-black").css("background","black");
-        $(".div-for-racetrack").show();
+        $(".div-for-racetrack").show();+
+        $(".corner-bets").hide();
+        $(".split").hide();
     });
     $(document).on("click",".r-track.active",function() {
         closeTab('.r-track.active');
@@ -70,7 +72,8 @@ $(document).ready(function () {
         $(".div-for-racetrack").hide()
         $(".div-for-favorites").hide()
         $(".div-for-stats").hide()
-
+        $(".corner-bets").show();
+        $(".split").show();
 
     });
     $(document).on("click",".favorites",function() {
@@ -81,6 +84,8 @@ $(document).ready(function () {
         $(".main").addClass("background-racetrack");
         $(".background-black").css("background","black")
         $(".div-for-favorites").show()
+        $(".corner-bets").hide();
+        $(".split").hide();
     });
     $(document).on("click",".favorites.active",function() {
         closeTab('.favorites.active');
@@ -92,6 +97,8 @@ $(document).ready(function () {
         $(".div-for-racetrack").hide()
         $(".div-for-favorites").hide()
         $(".div-for-stats").hide()
+        $(".corner-bets").show();
+        $(".split").show();
 
     });
     $(document).on("click",".stats",function() {
