@@ -225,6 +225,7 @@ $(document).ready(function () {
         let img = `<img src="/Content/Images/${bet}GEL.png" alt=""   > `;
         $(this).append(img);
         console.log($(this).data("name"));
+       
     });  
     $(".column-bet").on("click",function(){
         let img = `<img src="/Content/Images/${bet}GEL.png" alt=""   > `;
@@ -254,8 +255,12 @@ $(document).ready(function () {
     });
     function addBet(name,multiplier){
         let image = `<img class="bet-chip" src="/Content/Images/${multiplier}GEL.png">`;
-	    let betChip = $("div[data-name='" + name  +"']");
-  	    $(betChip).append(image);
+        let betChip = $("div[data-name='" + name  +"']");
+	    let betChip2 = $("span[data-name='" + name  +"']");        
+        $(betChip).append(image);
+        $(betChip2).append(image);
+
+        console.log(name)
     }
 
     $(".jackpot-win").html(data.JackpotAmount);

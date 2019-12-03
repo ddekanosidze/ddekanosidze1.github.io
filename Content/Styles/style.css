@@ -410,8 +410,9 @@ body{
     font-size: 25.6px;
     color: #ffffff;
     font-family: "CrystalBetUni";
+
 }
-.other-bets>img{
+.other-bets img{
     position: absolute;
     width: 35px;
     height: 35px;
@@ -447,7 +448,6 @@ body{
     
     left: 203px;
 }
-
 
 .other-bets>.row{
     font-size: 19px;

@@ -156,7 +156,39 @@ let data =  {
               },
               {
                 "Multiplier": 10000,
-                "BetName": "Straight up 14"
+                "BetName": "Even"
+              },
+              {
+                "Multiplier": 10000,
+                "BetName": "Odd"
+              },
+              {
+                "Multiplier": 10000,
+                "BetName": "Black"
+              },
+              {
+                "Multiplier": 10000,
+                "BetName": "Red"
+              },
+              {
+                "Multiplier": 10000,
+                "BetName": "19 To 36"
+              },
+              {
+                "Multiplier": 10000,
+                "BetName": "2nd Dozen"
+              },
+              {
+                "Multiplier": 10000,
+                "BetName": "1st Dozen"
+              },
+              {
+                "Multiplier": 10000,
+                "BetName": "1 To 18"
+              },
+              {
+                "Multiplier": 10000,
+                "BetName": "3rd Dozen"
               },
               {
                 "Multiplier": 50,
