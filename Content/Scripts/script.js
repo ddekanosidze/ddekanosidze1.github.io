@@ -289,7 +289,7 @@ $(document).ready(function () {
                width = 576;
                $(".loader").css("width",width+"px");
                $(".chip-on-board").remove();
-               $(".bet-chip").remove();
+            //    $(".bet-chip").remove();
             }
         }, 10000);
         
