@@ -206,7 +206,7 @@ $(document).ready(function () {
   
     
     $(".corner-bets").on("click",function(){
-        let img = `<img src="/Content/Images/${bet}GEL.png" alt="" class="coin"  >` ;
+        let img = `<img src="/Content/Images/${bet}GEL.png" alt="" class="coin chip-on-board">` ;
         $(this).append(img);
         console.log($(this).data("name"))  
     });
@@ -221,45 +221,45 @@ $(document).ready(function () {
     
 
     $(".red").on("click",function(){
-        let img = `<img src="/Content/Images/${bet}GEL.png" alt="" class="asd" > `;
+        let img = `<img src="/Content/Images/${bet}GEL.png" alt="" class="chip-on-board" > `;
         $(this).append(img);
         console.log($(this).data("name"));
 
     });
 
     $(".street").on("click",function(){
-        let img = `<img src="/Content/Images/${bet}GEL.png" alt=""   > `;
+        let img = `<img src="/Content/Images/${bet}GEL.png" alt="" class="chip-on-board"  > `;
         $(this).append(img);
         console.log($(this).data("name"));
         console.log($(this))
     });
     $(".other-bets").on("click",function(){
-        let img = `<img src="/Content/Images/${bet}GEL.png" alt=""   > `;
+        let img = `<img src="/Content/Images/${bet}GEL.png" alt=""  class="chip-on-board" > `;
         $(this).append(img);
         console.log($(this).data("name"));
        
     });  
     $(".column-bet").on("click",function(){
-        let img = `<img src="/Content/Images/${bet}GEL.png" alt=""   > `;
+        let img = `<img src="/Content/Images/${bet}GEL.png" alt=""  class="chip-on-board" > `;
         $(this).append(img);
         console.log($(this).data("name"));
 
     });
     $(".black").on("click",function(){
-        let img = `<img src="/Content/Images/${bet}GEL.png" alt=""   > `;
+        let img = `<img src="/Content/Images/${bet}GEL.png" alt=""  class="chip-on-board" > `;
         $(this).append(img);
         console.log($(this).data("name"));
 
     });
 
     $(".green").on("click",function(){
-        let img = `<img src="/Content/Images/${bet}GEL.png" alt=""   > `;
+        let img = `<img src="/Content/Images/${bet}GEL.png" alt=""  class="chip-on-board" > `;
         $(this).append(img);
         console.log($(this).data("name"));
 
     });
     $(".split").on("click",function(){
-        let img = `<img src="/Content/Images/${bet}GEL.png" alt="" > `;
+        let img = `<img src="/Content/Images/${bet}GEL.png" alt=""  class="chip-on-board"> `;
         $(this).append(img);
         console.log($(this).data("name"));
         $("img")
@@ -274,7 +274,27 @@ $(document).ready(function () {
 
         console.log(name)
     }
+    function loaderFunction(){
+        let width = 576;
+        $(".loader").css("width",width+"px");
+        setInterval(function(){ 
+            if(width > 0){
+               width-= 18;
+               $(".loader").css("width",width+"px");
 
+            }
+        }, 950);
+        setInterval(function(){ 
+            if(width === 0){
+               width = 576;
+               $(".loader").css("width",width+"px");
+               $(".chip-on-board").remove();
+               $(".bet-chip").remove();
+            }
+        }, 10000);
+        
+    }
+    loaderFunction();
     $(".jackpot-win").html(data.JackpotAmount);
     $(".user-balance").html(data.PlayerInfo.AvailableAmount);
     $(".user-bet").html(data.PlayerInfo.PlacedAmount);
@@ -327,14 +347,12 @@ $(document).ready(function () {
         $(".last-houndreed-numbers-container").append(li);
     }
     
-    let  lastFourNumbers = `    
-    <div class="last-numbers ${LastHoundreedSpins[0].Color}" >${LastHoundreedSpins[0].Number}</div>
-    <div class="last-numbers ${LastHoundreedSpins[1].Color}">${LastHoundreedSpins[1].Number}</div>
-    <div class="last-numbers ${LastHoundreedSpins[2].Color}">${LastHoundreedSpins[2].Number}</div>
-    <div class="last-numbers ${LastHoundreedSpins[3].Color}" >${LastHoundreedSpins[3].Number}</div>
-    `; 
+    for(let index = 0 ; index < 4 ; index++){
+        let lastNumberDiv = `
+        <div class="last-numbers ${LastHoundreedSpins[index].Color}" >${LastHoundreedSpins[index].Number}</div>`;
 
-    $(".last-numbers-history").prepend(lastFourNumbers);
+        $(".last-numbers-history").prepend(lastNumberDiv);
+    }
     for(let key in data.SpinsDistributionPercents.ColdNumbers){
 
         if(data.SpinsDistributionPercents.ColdNumbers[key].Color === 1){
